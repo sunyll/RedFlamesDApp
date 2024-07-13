@@ -118,10 +118,26 @@ const config: HardhatUserConfig = {
       url: "https://sepolia.publicgoods.network",
       accounts: [deployerPrivateKey],
     },
+    zircuit: {
+      url: `https://zircuit1.p2pify.com`,
+      accounts: [deployerPrivateKey],
+    }
   },
   // configuration for harhdat-verify plugin
   etherscan: {
-    apiKey: `${etherscanApiKey}`,
+    apiKey: {
+      zircuit: "0365AD4F56EAA5AF156597C1528123D9FE"
+    },
+    customChains: [
+      {
+        network: "zircuit",
+        chainId: 48899,
+        urls: {
+          apiURL: "https://explorer.zircuit.com/api/contractVerifyHardhat",
+          browserURL: "https://explorer.zircuit.com",
+        }
+      },
+    ]
   },
   // configuration for etherscan-verify from hardhat-deploy plugin
   verify: {
