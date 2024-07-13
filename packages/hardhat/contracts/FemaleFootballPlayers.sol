@@ -7,18 +7,9 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-/**
- * A smart contract that allows changing a state variable of the contract and tracking the changes
- * It also allows the owner to withdraw the Ether in the contract
- * @author BuidlGuidl, Kevin Jones
- */
-
-// TODO make ERC721
 contract FemaleFootballPlayers is ERC721URIStorage, Ownable {
 	using Counters for Counters.Counter;
 	Counters.Counter private _tokenId;
-
-	uint256 public playerCount = 0;
 
 	// add some structure with the player details
 	struct Player {
@@ -32,6 +23,7 @@ contract FemaleFootballPlayers is ERC721URIStorage, Ownable {
 
 	// give a token id to each player
 	mapping(uint256 => Player) public players;
+	uint256 public totalPlayers;
 
 	// track number of instances for each player
 	mapping(uint256 => uint256) public playerInstanceCount;

@@ -125,7 +125,19 @@ const config: HardhatUserConfig = {
   },
   // configuration for harhdat-verify plugin
   etherscan: {
-    apiKey: `${etherscanApiKey}`,
+    apiKey: {
+      zircuit: "0365AD4F56EAA5AF156597C1528123D9FE"
+    },
+    customChains: [
+      {
+        network: "zircuit",
+        chainId: 48899,
+        urls: {
+          apiURL: "https://explorer.zircuit.com/api/contractVerifyHardhat",
+          browserURL: "https://explorer.zircuit.com",
+        }
+      },
+    ]
   },
   // configuration for etherscan-verify from hardhat-deploy plugin
   verify: {
