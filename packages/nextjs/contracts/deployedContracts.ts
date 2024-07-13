@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   31337: {
     FemaleFootballPlayers: {
-      address: "0x9A676e781A523b5d0C0e43731313A708CB607508",
+      address: "0x0B306BF915C4d645ff596e518fAf3F9669b97016",
       abi: [
         {
           inputs: [],
@@ -102,6 +102,25 @@ const deployedContracts = {
             {
               indexed: true,
               internalType: "address",
+              name: "previousOwner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "OwnershipTransferred",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
               name: "owner",
               type: "address",
             },
@@ -175,6 +194,44 @@ const deployedContracts = {
           ],
           name: "Transfer",
           type: "event",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "name",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "main_field_position",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "nationality",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "current_team",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "playerScore",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "year",
+              type: "uint256",
+            },
+          ],
+          name: "addPlayer",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
         },
         {
           inputs: [
@@ -279,6 +336,57 @@ const deployedContracts = {
         {
           inputs: [
             {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getPlayerDetails",
+          outputs: [
+            {
+              components: [
+                {
+                  internalType: "string",
+                  name: "name",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "main_field_position",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "nationality",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "current_team",
+                  type: "string",
+                },
+                {
+                  internalType: "uint256",
+                  name: "playerScore",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "year",
+                  type: "uint256",
+                },
+              ],
+              internalType: "struct FemaleFootballPlayers.Player",
+              name: "",
+              type: "tuple",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
               internalType: "address",
               name: "owner",
               type: "address",
@@ -337,6 +445,19 @@ const deployedContracts = {
               internalType: "string",
               name: "",
               type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
             },
           ],
           stateMutability: "view",
@@ -403,6 +524,13 @@ const deployedContracts = {
             },
           ],
           stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "renounceOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
           type: "function",
         },
         {
@@ -548,6 +676,19 @@ const deployedContracts = {
           stateMutability: "nonpayable",
           type: "function",
         },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "transferOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
       ],
       inheritedFunctions: {
         approve:
@@ -573,6 +714,9 @@ const deployedContracts = {
           "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
         transferFrom:
           "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        owner: "@openzeppelin/contracts/access/Ownable.sol",
+        renounceOwnership: "@openzeppelin/contracts/access/Ownable.sol",
+        transferOwnership: "@openzeppelin/contracts/access/Ownable.sol",
       },
     },
   },

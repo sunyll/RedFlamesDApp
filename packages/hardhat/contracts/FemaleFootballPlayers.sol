@@ -14,7 +14,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
  */
 
 // TODO make ERC721
-contract FemaleFootballPlayers is ERC721URIStorage{
+contract FemaleFootballPlayers is ERC721URIStorage, Ownable{
 	using Counters for Counters.Counter;
 	Counters.Counter private _tokenId;
 
@@ -72,6 +72,14 @@ contract FemaleFootballPlayers is ERC721URIStorage{
 	}
 
 	// add a function to retrieve the player details with the token ID
+	function getPlayerDetails(uint256 tokenId) public view returns (Player memory) {
+		require(_exists(tokenId), "Token does not exist");
+		return players[tokenId];
+	}
+
 	// add a function to add players to the playerlist (either newcomers or for an update each year)
+	function addPlayer(string memory name, string memory main_field_position, string memory nationality, string memory current_team, uint256 playerScore, uint256 year) public onlyOwner {
+		definedPlayers.push(Player(name, main_field_position, nationality, current_team, playerScore, year));
+	}
 
 }
