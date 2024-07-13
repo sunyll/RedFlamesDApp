@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   31337: {
     FemaleFootballPlayers: {
-      address: "0x4c5859f0F772848b2D91F1D83E2Fe57935348029",
+      address: "0x5081a39b8A5f0E35a8D959395a630b68B74Dd30f",
       abi: [
         {
           inputs: [],
@@ -271,19 +271,6 @@ const deployedContracts = {
           type: "function",
         },
         {
-          inputs: [],
-          name: "count",
-          outputs: [
-            {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "view",
-          type: "function",
-        },
-        {
           inputs: [
             {
               internalType: "uint256",
@@ -497,13 +484,6 @@ const deployedContracts = {
             },
           ],
           stateMutability: "view",
-          type: "function",
-        },
-        {
-          inputs: [],
-          name: "inc",
-          outputs: [],
-          stateMutability: "nonpayable",
           type: "function",
         },
         {

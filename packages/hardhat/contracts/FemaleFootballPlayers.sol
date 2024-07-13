@@ -177,11 +177,7 @@ contract FemaleFootballPlayers is ERC721URIStorage, Ownable {
 		);
 	}
 
-	// not sure if the following functions are neccessary/useful
-	function getDefinedPlayers() public view returns (Player[] memory) {
-		return definedPlayers;
-	}
-
+	// add a function to retrieve any playerdata from a specific player in the defined player list
 	function getPlayerByIndex(
 		uint256 index
 	)
@@ -207,6 +203,12 @@ contract FemaleFootballPlayers is ERC721URIStorage, Ownable {
 		);
 	}
 
+	// add function that returns a list of all defined players in an array
+	function getDefinedPlayers() public view returns (Player[] memory) {
+		return definedPlayers;
+	}
+
+	// add function that returns the total number of players in the player list
 	function getPlayerCount() public view returns (uint256) {
 		return definedPlayers.length;
 	}

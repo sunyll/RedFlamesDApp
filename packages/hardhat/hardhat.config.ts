@@ -118,6 +118,10 @@ const config: HardhatUserConfig = {
       url: "https://sepolia.publicgoods.network",
       accounts: [deployerPrivateKey],
     },
+    zircuit: {
+      url: `https://zircuit1.p2pify.com`,
+      accounts: [deployerPrivateKey],
+    }
   },
   // configuration for harhdat-verify plugin
   etherscan: {

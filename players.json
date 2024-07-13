@@ -5,7 +5,8 @@
       "nationality": "Belgium",
       "team": "UD Granadilla Tenerife",
       "score": 87,
-      "year": 2024
+      "year": 2024,
+      "image": "0.png"
     },
     {
       "name": "Jassina Blom",
@@ -13,7 +14,8 @@
       "nationality": "Belgium",
       "team": "UD Granadilla Tenerife",
       "score": 82,
-      "year": 2023
+      "year": 2023,
+      "image": "1.png"
     },
     {
       "name": "Nicky Evrard",
@@ -21,7 +23,8 @@
       "nationality": "Belgium",
       "team": "Chelsea",
       "score": 91,
-      "year": 2024
+      "year": 2024,
+      "image": "2.png"
     },
     {
       "name": "Lisa Lichtfus",
@@ -29,7 +32,8 @@
       "nationality": "Belgium",
       "team": "Le Havre AC",
       "score": 89,
-      "year": 2024
+      "year": 2024,
+      "image": "3.png"
     }
   ]
   
