@@ -13,7 +13,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
-  await deploy("FootballPlayers", {
+  await deploy("FemaleFootballPlayers", {
     from: deployer,
     args: [],
   });
@@ -22,4 +22,4 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
 
 export default deployYourContract;
 
-deployYourContract.tags = ["FootballPlayers"];
+deployYourContract.tags = ["FemaleFootballPlayers"];
