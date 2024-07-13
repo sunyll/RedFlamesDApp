@@ -5,6 +5,7 @@ import "hardhat/console.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
 /**
  * A smart contract that allows changing a state variable of the contract and tracking the changes
@@ -13,9 +14,9 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
  */
 
 // TODO make ERC721
-contract FemaleFootballPlayers is ERC721{
+contract FemaleFootballPlayers is ERC721URIStorage{
 	using Counters for Counters.Counter;
-	Counters.Counter private _tokenIds;
+	Counters.Counter private _tokenId;
 
 	
 	// add some structure with the player details
@@ -45,11 +46,31 @@ contract FemaleFootballPlayers is ERC721{
 	// add function to initialize the player list
 	function _initializePlayers() internal {
 		definedPlayers.push(Player("Jassina Blom", "midfielder", "Belgium", "UD Granadilla Tenerife", 87, 2024));
+		definedPlayers.push(Player("Jassina Blom", "midfielder", "Belgium", "UD Granadilla Tenerife", 82, 2023));
 		definedPlayers.push(Player("Nicky Evrard", "goalkeeper", "Belgium", "Chelsea", 91, 2024));
 		definedPlayers.push(Player("Lisa Lichtfus", "goalkeeper", "Belgium", "Le Havre AC", 89, 2024));
 	}
 
 	// add a function to mint a new player token
+	function mintPlayer (address to, string memory tokenURI, uint256 definedPlayerIndex) public returns (uint256) {
+		// check if the index number is in the player list
+		require(definedPlayerIndex < definedPlayers.length, "Invalid player index");
+
+		_tokenId.increment();
+
+		uint256 newItemId = _tokenId.current();
+		_safeMint(to, newItemId);
+		_setTokenURI(newItemId, tokenURI);
+
+		// store player details from the predefined list
+		Player memory newPlayer = definedPlayers[definedPlayerIndex];
+		players[newItemId] = newPlayer;
+
+		emit PlayerMinted(msg.sender, newItemId, newPlayer.name, newPlayer.main_field_position, newPlayer.nationality, newPlayer.current_team, newPlayer.playerScore, newPlayer.year);
+
+		return newItemId;
+	}
+
 	// add a function to retrieve the player details with the token ID
 	// add a function to add players to the playerlist (either newcomers or for an update each year)
 

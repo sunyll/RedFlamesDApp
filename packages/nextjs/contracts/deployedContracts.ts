@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   31337: {
     FemaleFootballPlayers: {
-      address: "0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82",
+      address: "0x9A676e781A523b5d0C0e43731313A708CB607508",
       abi: [
         {
           inputs: [],
@@ -62,6 +62,38 @@ const deployedContracts = {
             },
           ],
           name: "ApprovalForAll",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "_fromTokenId",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "_toTokenId",
+              type: "uint256",
+            },
+          ],
+          name: "BatchMetadataUpdate",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "_tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "MetadataUpdate",
           type: "event",
         },
         {
@@ -266,6 +298,35 @@ const deployedContracts = {
             },
           ],
           stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "tokenURI",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "definedPlayerIndex",
+              type: "uint256",
+            },
+          ],
+          name: "mintPlayer",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "nonpayable",
           type: "function",
         },
         {
@@ -489,18 +550,29 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {
-        approve: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        balanceOf: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        getApproved: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        isApprovedForAll: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        name: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        ownerOf: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        safeTransferFrom: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        setApprovalForAll: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        supportsInterface: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        symbol: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        tokenURI: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        transferFrom: "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        approve:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        balanceOf:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        getApproved:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        isApprovedForAll:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        name: "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        ownerOf:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        safeTransferFrom:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        setApprovalForAll:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        supportsInterface:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        symbol:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        tokenURI:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        transferFrom:
+          "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
       },
     },
   },
