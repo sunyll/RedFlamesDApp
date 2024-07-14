@@ -65,12 +65,12 @@ contract FemaleFootballPlayers is ERC721URIStorage, Ownable {
 		);
 		definedPlayers.push(
 			Player(
-				"Jassina Blom",
+				"Tine De Caigny",
 				"midfielder",
 				"Belgium",
-				"UD Granadilla Tenerife",
-				82,
-				2023
+				"Hoffenheim",
+				85,
+				2024
 			)
 		);
 		definedPlayers.push(
@@ -83,6 +83,32 @@ contract FemaleFootballPlayers is ERC721URIStorage, Ownable {
 				"Belgium",
 				"Le Havre AC",
 				89,
+				2024
+			)
+		);
+		definedPlayers.push(
+			Player(
+				"Marta Vieira da Silva",
+				"forward",
+				"Brazil",
+				"Orlando Pride",
+				95,
+				2024
+			)
+		);
+		definedPlayers.push(
+			Player("Alex Morgan", "forward", "USA", "San Diego Wave", 93, 2024)
+		);
+		definedPlayers.push(
+			Player("Sam Kerr", "forward", "Australia", "Chelsea", 92, 2024)
+		);
+		definedPlayers.push(
+			Player(
+				"Vivianne Miedema",
+				"forward",
+				"Netherlands",
+				"Arsenal",
+				91,
 				2024
 			)
 		);

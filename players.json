@@ -9,12 +9,12 @@
     "image": "0.png"
   },
   {
-    "name": "Jassina Blom",
+    "name": "Tine De Caigny",
     "position": "midfielder",
     "nationality": "Belgium",
-    "team": "UD Granadilla Tenerife",
-    "score": 82,
-    "year": 2023,
+    "team": "Hoffenheim",
+    "score": 85,
+    "year": 2024,
     "image": "1.png"
   },
   {
@@ -34,5 +34,41 @@
     "score": 89,
     "year": 2024,
     "image": "3.png"
+  },
+  {
+    "name": "Marta Vieira da Silva",
+    "position": "forward",
+    "nationality": "Brazil",
+    "team": "Orlando Pride",
+    "score": 95,
+    "year": 2024,
+    "image": "4.png"
+  },
+  {
+    "name": "Alex Morgan",
+    "position": "forward",
+    "nationality": "USA",
+    "team": "San Diego Wave",
+    "score": 93,
+    "year": 2024,
+    "image": "5.png"
+  },
+  {
+    "name": "Sam Kerr",
+    "position": "forward",
+    "nationality": "Australia",
+    "team": "Chelsea",
+    "score": 92,
+    "year": 2024,
+    "image": "6.png"
+  },
+  {
+    "name": "Vivianne Miedema",
+    "position": "forward",
+    "nationality": "Netherlands",
+    "team": "Arsenal",
+    "score": 91,
+    "year": 2024,
+    "image": "7.png"
   }
 ]

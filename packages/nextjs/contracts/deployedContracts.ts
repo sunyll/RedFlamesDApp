@@ -880,7 +880,7 @@ const deployedContracts = {
   },
   48899: {
     FemaleFootballPlayers: {
-      address: "0x8ff1c26F9149112C310d49E591E3e0e15EB17c9F",
+      address: "0x4FC7E8EDBCF9a60d04b304D2d7Fc01F1558a09db",
       abi: [
         {
           inputs: [],
